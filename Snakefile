@@ -7,13 +7,13 @@ rule count:
     shell:
         "wc -w {input} > {output}"
 
-#rule concat:
-#    """merging word text files"""
-#    input:
-#        "output/wc_A.txt",
-#        "output/wc_B.txt",
-#        "output/wc_C.txt"
-#    output:
-#        "temp/wc_all.csv"
-#    script:
-#        "script/concat.py"
+rule concat:
+    """merging word text files"""
+    input:
+        "output/wc_A.txt",
+        "output/wc_B.txt",
+        "output/wc_C.txt"
+    output:
+        "output/wc_all.csv"
+    script:
+        "script/concat.py"
